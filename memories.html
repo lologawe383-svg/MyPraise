@@ -1,0 +1,69 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Memories</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fff0f6;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    h2 {
+      color: #d6336c;
+      margin-bottom: 30px;
+    }
+    img, video {
+      width: 70%;
+      max-width: 500px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .balloon {
+      position: fixed;
+      bottom: -100px;
+      width: 40px;
+      height: 50px;
+      background: red;
+      border-radius: 50%;
+      animation: floatUp 10s linear infinite;
+      z-index: 999;
+    }
+    @keyframes floatUp {
+      0% { bottom: -100px; opacity: 0; }
+      20% { opacity: 1; }
+      100% { bottom: 110%; opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="C:\Users\andil\Downloads\Mac Miller - Congratulations (feat. Bilal).mp3" type="audio/mpeg">
+  </audio>
+
+  <h2>Our Memories</h2>
+  <img src="photo1.jpeg" alt="Memory 1">
+  <img src="photo2.jpeg" alt="Memory 2">
+  <img src="photo3.jpeg" alt="Memory 3">
+  <!-- Later add videos -->
+  <!-- <video controls src="video1.mp4"></video> -->
+
+  <script>
+    // Floating balloons
+    setInterval(() => {
+      let balloon = document.createElement('div');
+      balloon.className = 'balloon';
+      balloon.style.left = Math.random() * window.innerWidth + 'px';
+      balloon.style.background = ['red','pink','purple'][Math.floor(Math.random()*3)];
+      balloon.style.animationDuration = (6 + Math.random()*4) + 's';
+      document.body.appendChild(balloon);
+      setTimeout(() => balloon.remove(), 10000);
+    }, 1000);
+  </script>
+</body>
+</html>
